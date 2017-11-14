@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>WebRTC</title>
+</head>
+<body>
+	<video id="source" autoplay muted></video>
+	<video id="recorded" autoplay loop></video>
+	<div>
+		<button id="record" disabled>开始录制</button>
+	</div>
+<!-- 做WebRTC相关API一致性适配 -->
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
