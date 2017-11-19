@@ -1,11 +1,12 @@
 var mediaSource = new MediaSource();
 
 mediaSource.addEventListener('sourceopen', handleSourceOpen, false);
-
+//初始化
 var mediaRecorder, recordeBlobs, sourceBuffer;
 var sourceVideo = document.getElementById('source');
 var recordButton = document.getElementById('record');
 
+//重录制按钮事件绑定
 recordButton.onclick = toggleRecording;
 
 var constraints = {audio: true, video: {width: 320}};
@@ -36,7 +37,7 @@ function toggleRecording() {
 		recordButton.textContent = '开始录制';
 	}
 }
-
+//开录
 function startRecording() {
 	recordedBlobs = [];
 	var mimeTypes = [
@@ -55,6 +56,7 @@ function startRecording() {
 		mediaRecorder.ondataavailable = handleDataAvailable;
 		mediaRecorder.start(10);
 }
+//停录
 function stopRecording() {
 	mediaRecorder.stop();
 		var buf = new Blob(recordedBlobs, { type: 'video/webm'});
